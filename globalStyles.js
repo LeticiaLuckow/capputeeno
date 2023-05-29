@@ -2,14 +2,13 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
+    max-width: 100vw;
     margin: 0;
     padding: 0;
     font-family: Saira;
+    overflow-x: hidden;
   },
-  // p, span {
-  //   color: red;
-  //   font-weight: 400;
-  // }
+ 
 `;
 
 export default GlobalStyle;
