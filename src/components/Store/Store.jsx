@@ -1,3 +1,4 @@
+import ProductCard from '../ProductCard/ProductCard';
 import { DivMain, FilterItem, FilterList, ListContainer } from './styles';
 
 const Store = () => {
@@ -9,7 +10,14 @@ const Store = () => {
         <FilterItem>Canecas</FilterItem>
       </FilterList>
 
-      <ListContainer></ListContainer>
+      <ListContainer>
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </ListContainer>
     </DivMain>
   );
 };
