@@ -6,14 +6,16 @@ const Card = styled.div`
   justify-content: center;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.4);
-  border-radius: 4px 4px 0 0;
+  border-radius: 6px 6px 0 0;
   width: 256px;
 `;
 
 const ImageCard = styled.img`
   width: 256px;
   height: 300px;
-  border-radius: 4px 4px 0 0;
+  border-radius: 6px 6px 0 0;
+  object-fit: cover;
+  object-position: center;
 `;
 
 const DivInfo = styled.div`

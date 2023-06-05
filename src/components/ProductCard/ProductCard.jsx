@@ -1,14 +1,17 @@
+import { useEffect, useState } from 'react';
 import { Card, DivInfo, DivLine, ImageCard, PriceP, TitleH3 } from './styles';
 
-const ProductCard = () => {
+const ProductCard = ({image, title, price}) => {
+ 
+
   return (
     <Card>
-      <ImageCard src="https://cdn.awsli.com.br/866/866032/produto/37341546/3209c78f98.jpg" />
+      <ImageCard src={image} />
 
       <DivInfo>
-        <TitleH3>caneca</TitleH3>
+        <TitleH3>{title}</TitleH3>
         <DivLine></DivLine>
-        <PriceP> R$ 39,00</PriceP>
+        <PriceP>R$ {price}</PriceP>
       </DivInfo>
     </Card>
   );
