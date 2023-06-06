@@ -16,6 +16,7 @@ const FilterList = styled.ul`
   gap: 40px;
   list-style: none;
   padding: 0;
+  height: 40px;
 `;
 
 const FilterItem = styled.li`

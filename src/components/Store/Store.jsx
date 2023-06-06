@@ -1,39 +1,46 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 import { DivMain, FilterItem, FilterList, ListContainer } from './styles';
-import { useParams } from 'react-router-dom';
 
 const Store = () => {
   const [productSummary, setProductSummary] = useState();
   const [product, setProduct] = useState();
+  const [category, setCategory] = useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:1337/api/produtos?populate=*`)
+    fetch(
+      `http://localhost:1337/api/produtos?${category}&populate=*`,
+    )
       .then((Response) => Response.json())
       .then((data) => {
         console.log('data', data);
         setProduct(data.data);
       });
-  }, []);
+  }, [category]);
+
 
   return (
     <DivMain>
       <FilterList>
-        <FilterItem>Todos os produtos</FilterItem>
-        <FilterItem>Camisetas</FilterItem>
-        <FilterItem>Canecas</FilterItem>
+        <FilterItem onClick={() => setCategory('')}>
+          Todos os produtos
+        </FilterItem>
+        <FilterItem onClick={() => setCategory('filters[categoria][$eq]=camiseta')}>
+          Camisetas
+        </FilterItem>
+        <FilterItem onClick={() => setCategory('filters[categoria][$eq]=caneca')}>Canecas</FilterItem>
       </FilterList>
 
       <ListContainer>
         {product &&
-          product.map((bolinha) => (
+          product.map((card) => (
             <ProductCard
               image={
                 'http://localhost:1337' +
-                bolinha?.attributes?.image?.data[0]?.attributes?.url
+                card?.attributes?.image?.data[0]?.attributes?.url
               }
-              title={bolinha?.attributes?.title}
-              price={bolinha?.attributes?.price.toFixed(2)}
+              title={card?.attributes?.title}
+              price={card?.attributes?.price.toFixed(2)}
             />
           ))}
       </ListContainer>
