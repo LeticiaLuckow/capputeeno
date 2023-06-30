@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 
 const DivMain = styled.div`
+  
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 34px 160px;
+  padding: 12px 24px;
   min-height: calc(100vh - 168px);
   background-color: #dedede;
+
+  @media (min-width: 768px) {
+    padding: 34px 160px;
+  }
 `;
 
 const FilterList = styled.ul`
@@ -41,5 +46,10 @@ const ListContainer = styled.div`
   grid-gap: 32px;
   max-width: 100%;
   margin-top: 32px;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+  }
 `;
 export { DivMain, FilterList, FilterItem, ListContainer };

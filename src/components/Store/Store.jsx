@@ -8,6 +8,7 @@ const Store = () => {
   const [category, setCategory] = useState('');
 
   useEffect(() => {
+    
     fetch(
       `http://localhost:1337/api/produtos?${category}&populate=*`,
     )
@@ -25,10 +26,11 @@ const Store = () => {
         <FilterItem onClick={() => setCategory('')}>
           Todos os produtos
         </FilterItem>
-        <FilterItem onClick={() => setCategory('filters[categoria][$eq]=camiseta')}>
+        <FilterItem onClick={() => setCategory('filters[category][$eq]=camiseta') }>
+          
           Camisetas
         </FilterItem>
-        <FilterItem onClick={() => setCategory('filters[categoria][$eq]=caneca')}>Canecas</FilterItem>
+        <FilterItem onClick={() => setCategory('filters[category][$eq]=caneca')}>Canecas</FilterItem>
       </FilterList>
 
       <ListContainer>

@@ -4,15 +4,26 @@ const TagHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 160px;
+  padding: 12px 24px;
+  flex-direction:column;
+  
+
+  @media (min-width: 768px){
+    padding: 20px 160px;
+    flex-direction:row;
+}
 `;
 
 const Logo = styled.a`
   color: #737380;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 24px;
   line-height: 150%;
   font-family: Saira Stencil One;
+
+  @media(min-width: 768px){
+    font-size: 40px;
+}
 `;
 
 const ContainerFlex = styled.div`
@@ -23,7 +34,7 @@ const ContainerFlex = styled.div`
 `;
 
 const InputContainer = styled.div`
-  width: 352px;
+  width: 250px;
   background: #f3f5f6;
   border-radius: 8px;
   font-size: 14px;
@@ -34,21 +45,31 @@ const InputContainer = styled.div`
     top: 30%;
     transform: translateY(-50%);
   }
+
+  @media(min-width: 768px){
+    width: 352px;
+}
 `;
 const SearchInput = styled.input`
-  width: 352px;
+  width: 100%;
   background: #f3f5f6;
   border-radius: 8px;
   padding: 10px 16px;
   font-family: Saira;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   border: none;
+  line-height: 20px
 
   &:focus-visible {
     border: none;
     outline: none;
   }
+
+  @media(min-width: 768px){
+    font-size: 14px;
+    line-height: 22px;
+}
 `;
 
 const ButtonSearch = styled.button`
@@ -70,7 +91,6 @@ const CartCount = styled.span`
   font-size: 10px;
   background-color: #de3838;
   color: white;
-
   margin-left: -10px;
 `;
 
